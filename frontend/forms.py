@@ -19,15 +19,6 @@ class LoginForm(forms.Form):
         self.helper.form_class = 'login-form'
         self.helper.add_input(Submit('login', 'Login', css_class='w-100'))
 
-    # def clean_email(self):
-    #     email = self.cleaned_data['email']
-    #
-    #     if not authenticate(email):
-    #         raise forms.ValidationError('Email does not exists')
-    #
-    #     return email
-
-
 class RegisterForm(forms.ModelForm):
     class Meta:
         model = Player
@@ -40,6 +31,12 @@ class RegisterForm(forms.ModelForm):
             raise forms.ValidationError('Duplicate email')
 
         return self.cleaned_data
+
+    def clean_first_name(self):
+        return self.cleaned_data['first_name'].upper()
+
+    def clean_last_name(self):
+        return self.cleaned_data['last_name'].upper()
 
     def save(self, commit=True):
         instance = super(RegisterForm, self).save(commit=False)

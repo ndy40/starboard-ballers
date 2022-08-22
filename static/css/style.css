@@ -1,3 +1,56 @@
-#login-panel {
-    margin-top: 2.0rem;
+/*#login-panel {*/
+/*    margin-top: 2.0rem;*/
+/*}*/
+
+
+#timeslot {
+    background-color: rgb(153, 44, 102);
 }
+
+/*.event-list {*/
+/*    list-style: none;*/
+/*    margin: 0px;*/
+/*    padding: 0px;*/
+/*}*/
+
+/*.event-list > li {*/
+/*    background-color: rgb(255, 255, 255);*/
+/*    padding: 3px;*/
+/*    margin: 0px 0px 20px;*/
+/*}*/
+
+/*#timeslot {*/
+/*    display: inline-block;*/
+/*    width: 100%;*/
+/*    color: rgb(208, 59, 59);*/
+/*    background-color: rgb(153, 44, 102);*/
+/*    padding: 5px;*/
+/*    text-align: center;*/
+/*    text-transform: uppercase;*/
+/*}*/
+
+/*.event-list > li > div.timeslot > span {*/
+/*    display: none;*/
+/*}*/
+
+/*.event-list > li > div.timeslot > .day {*/
+/*    display: block;*/
+/*    font-size: 56pt;*/
+/*    font-weight: 300;*/
+/*    line-height: 1;*/
+/*}*/
+
+/*.event-list > li > div.timeslot > .month {*/
+/*    display: block;*/
+/*    font-size: 24pt;*/
+/*    font-weight: 200;*/
+/*    line-height: 1;*/
+/*}*/
+
+/*div.timeslot > .year {*/
+/*    display: none;*/
+/*}*/
+
+/*.event-description {*/
+/*    font-size: 0.85rem;*/
+/*}*/

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)50oj!kx(kn@t-*!b4zk(mglo8^j&q00h-5@phabcl+me-7&9w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.loca.lt', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -169,3 +169,8 @@ LOGGING = {
         },
     },
 }
+
+
+LOGIN_URL = '/'
+
+USE_X_FORWARDED_HOST = True
