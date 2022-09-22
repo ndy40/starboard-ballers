@@ -16,14 +16,14 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, re_path
 
-import frontend
 
 urlpatterns = [
+    re_path(r'',  include('public_app.urls')),
     path('admin/', admin.site.urls),
-    path('', include('frontend.urls')),
     path('sessions/', include('game_sessions.urls')),
+
 ]
 
 if settings.DEBUG:

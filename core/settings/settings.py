@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)50oj!kx(kn@t-*!b4zk(mglo8^j&q00h-5@phabcl+me-7&9w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.loca.lt', 'localhost', '127.0.0.1']
 
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     
     # local apps
     'game_sessions',
-    'frontend'
+    'public_app'
 ]
 
 MIDDLEWARE = [
@@ -130,7 +130,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    'static',
+    'static'
 ]
 
 # Default primary key field type
