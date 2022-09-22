@@ -1,2 +1,1 @@
-.venv
-/client/node_modules
+.gitignore

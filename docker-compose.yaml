@@ -1,0 +1,32 @@
+services:
+  client:
+    container_name: starboard_ballers_frontend
+    restart: unless-stopped
+    tty: true
+    build:
+      context: .
+      target: "nodedev"
+    volumes:
+      - ./client/src:/code/src
+      - ./static/:/static/
+
+  django:
+    container_name: starboard_ballers_django
+    build:
+      context: .
+      target: 'pythondev'
+    volumes:
+      - .:/app
+
+  nginx:
+    image: nginx:1.23.1-alpine
+    container_name: starboard_ballers_nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./static/:/app/
+
+volumes:
+  web_static:
+  django_static:
