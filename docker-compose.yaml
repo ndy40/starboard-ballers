@@ -15,6 +15,10 @@ services:
     build:
       context: .
       target: 'pythondev'
+    environment:
+      OAUTH_KEY: ${OAUTH_KEY}
+      OAUTH_DOMAIN: ${OAUTH_DOMAIN}
+      OAUTH_SECRET: ${OAUTH_SECRET}
     volumes:
       - .:/app
 
