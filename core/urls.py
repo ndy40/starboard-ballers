@@ -14,13 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
+from django.shortcuts import reverse
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.generic import RedirectView
 from django.urls import include, path, re_path
 
 
 urlpatterns = [
     re_path(r'',  include('public_app.urls')),
+    path('', include('social_django.urls', namespace='social')),
+    path('/login', RedirectView.as_view(url='login/starballers/')),
     path('admin/', admin.site.urls),
     path('sessions/', include('game_sessions.urls')),
 

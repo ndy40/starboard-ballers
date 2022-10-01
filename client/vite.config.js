@@ -12,13 +12,13 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "../static/"),
     rollupOptions: {
       input: 'src/main.js',
-      output:  {
+      output: {
         entryFileNames: "[name].js",
         assetFileNames: "[name][extname]"
       },
     }
   },
-  server : {
+  server: {
     host: '0.0.0.0'
   },
   resolve: {

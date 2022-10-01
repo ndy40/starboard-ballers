@@ -1,3 +1,6 @@
 django~=3.2.15
-django-crispy-forms~=1.10.0
-crispy-bootstrap5
+django-crispy-forms==1.14.0
+crispy-bootstrap5~=0.7
+social-auth-core==4.3.0
+social-auth-app-django==5.0.0
+python-jose~=3.3.0

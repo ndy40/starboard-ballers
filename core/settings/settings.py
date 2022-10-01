@@ -29,6 +29,17 @@ ALLOWED_HOSTS = ['.loca.lt', 'localhost', '127.0.0.1']
 
 
 # Application definition
+THIRD_PARTY_APPS = [
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'social_django',
+]
+
+LOCAL_APPS = [
+    # local apps
+    'game_sessions',
+    'public_app'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,15 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # third party apps
-    'crispy_forms',
-    'crispy_bootstrap5',
-    
-    # local apps
-    'game_sessions',
-    'public_app'
-]
+] + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -171,6 +174,21 @@ LOGGING = {
 }
 
 
-LOGIN_URL = '/'
+# Setting up login and redirect URLs
+LOGIN_URL = "/login/auth0/"
+LOGIN_REDIRECT_URL = "/"
 
 USE_X_FORWARDED_HOST = True
+
+AUTHENTICATION_BACKENDS = (
+    'local_packages.backends.StarballersAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
+
+SOCIAL_AUTH_STARBALLERS_KEY = os.getenv('OAUTH_KEY')
+SOCIAL_AUTH_STARBALLERS_DOMAIN = os.getenv('OAUTH_DOMAIN')
+SOCIAL_AUTH_STARBALLERS_SECRET = os.getenv('OAUTH_SECRET')
+SOCIAL_AUTH_STARBALLERS_SCOPE = ['openid', 'profile', 'email']
+SOCIAL_AUTH_SESSION_EXPIRATION = True
